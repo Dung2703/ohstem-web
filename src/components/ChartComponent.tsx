@@ -82,8 +82,12 @@ const ChartComponent: React.FC<ChartComponentProps> = ({ title, data, color, uni
   // Tạo nhãn trục Oy cho dữ liệu dạng {x, y} (fall time)
   let yTicks: number[] = [];
   if (isXY) {
-    for (let y = minY; y <= maxY; y += 5) {
-      yTicks.push(y);
+    if (maxY === 100) {
+      yTicks = [0, 50, 100]; // Specific ticks for 0, 50, 100
+    } else {
+      for (let y = minY; y <= maxY; y += 5) {
+        yTicks.push(y);
+      }
     }
   }
 

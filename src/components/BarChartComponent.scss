@@ -1,0 +1,40 @@
+.bar-chart {
+  &__container {
+    position: relative;
+    height: 200px;
+    width: 100%;
+    margin-bottom: 2.5rem;
+  }
+
+  &__y-axis {
+    position: absolute;
+    left: -2.5rem;
+    top: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #6b7280;
+    z-index: 1;
+  }
+
+  &__svg {
+    display: block;
+    z-index: 2;
+  }
+
+  &__x-axis {
+    position: absolute;
+    left: 0;
+    bottom: -2.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 16px;
+    font-size: 0.85rem;
+    color: #6b7280;
+    z-index: 1;
+    overflow: visible;
+  }
+} 

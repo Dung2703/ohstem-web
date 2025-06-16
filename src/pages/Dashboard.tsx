@@ -6,19 +6,19 @@ import './Dashboard.scss';
 
 // Dummy data cố định cho line chart (giờ, số lần té)
 const fallTimeByHour = [
-  { x: 0, y: 10 },
-  { x: 2, y: 15 },
-  { x: 4, y: 5 },
-  { x: 6, y: 20 },
-  { x: 8, y: 25 },
-  { x: 10, y: 12 },
-  { x: 12, y: 18 },
-  { x: 14, y: 8 },
-  { x: 16, y: 30 },
-  { x: 18, y: 22 },
-  { x: 20, y: 27 },
-  { x: 22, y: 14 },
-  { x: 24, y: 19 }
+  { x: 0, y: 0 },
+  { x: 2, y: 0 },
+  { x: 4, y: 0},
+  { x: 6, y: 10},
+  { x: 8, y: 55 },
+  { x: 10, y: 40 },
+  { x: 12, y: 60 },
+  { x: 14, y: 30 },
+  { x: 16, y: 80 },
+  { x: 18, y: 70 },
+  { x: 20, y: 85 },
+  { x: 22, y: 45 },
+  { x: 24, y: 0}
 ];
 
 // Dummy data cố định cho pie chart
@@ -69,7 +69,7 @@ const Dashboard: React.FC = () => {
           xMin={0}
           xMax={24}
           yMin={0}
-          yMax={50}
+          yMax={100}
         />
         <div style={{ marginTop: '2rem' }}>
           <PieChartComponent data={dashboardData.pie} />

@@ -7,10 +7,11 @@ import Settings from './pages/Settings';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import WifiConfig from './pages/WifiConfig';
 
 const AppLayout: React.FC = () => {
   const location = useLocation();
-  const hideSidebar = location.pathname === '/login' || location.pathname === '/register';
+  const hideSidebar = location.pathname === '/login' || location.pathname === '/register' || location.pathname === '/wifi-config';
 
   return (
     <div className="flex min-h-screen bg-gray-50">
@@ -23,6 +24,7 @@ const AppLayout: React.FC = () => {
           <Route path="/settings" element={<Settings />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/wifi-config" element={<WifiConfig />} />
         </Routes>
       </main>
     </div>
