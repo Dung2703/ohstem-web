@@ -21,16 +21,8 @@ const Sidebar: React.FC = () => {
       {/* Logo section */}
       <div className="relative p-8">
         <div className="flex items-center gap-3 px-2">
-          <div className="bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-xl p-3 rounded-2xl">
-            <img 
-              src="https://ohstem.vn/wp-content/uploads/2022/01/OhStem-Logo-2.png" 
-              alt="OhStem Logo" 
-              className="w-10 h-10 object-contain"
-            />
-          </div>
           <div>
-            <h1 className="font-bold text-xl">OhStem</h1>
-            <p className="text-xs text-white/60">Adafruit Dashboard</p>
+            <h1 className="font-bold text-xl">Belt for Falling Detection</h1>
           </div>
         </div>
       </div>
