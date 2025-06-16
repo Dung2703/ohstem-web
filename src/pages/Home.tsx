@@ -53,7 +53,7 @@ const Home: React.FC = () => {
         
         <ol className="home__steps">
           <li>
-            <span>Connect your OhStem device</span> 
+            <span>Wear the Falling Detection on your belt</span> 
           </li>
           <li>
             <span>Configure your Adafruit account</span> 
