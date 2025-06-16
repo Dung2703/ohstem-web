@@ -1,5 +1,5 @@
 import React from 'react';
-import { PowerIcon, SunIcon, MoonIcon, AdjustmentsHorizontalIcon } from '@heroicons/react/24/outline';
+import { PowerIcon, SunIcon, AdjustmentsHorizontalIcon } from '@heroicons/react/24/outline';
 import './DeviceControl.scss';
 
 interface DeviceControlProps {
