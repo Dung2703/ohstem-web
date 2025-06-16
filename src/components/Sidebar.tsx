@@ -13,7 +13,7 @@ const Sidebar: React.FC = () => {
   ];
 
   return (
-    <div className="h-screen bg-gradient-to-b from-indigo-900 via-purple-900 to-purple-800 text-white w-72 flex flex-col relative overflow-hidden">
+    <div className="sidebar h-screen bg-gradient-to-b from-indigo-900 via-purple-900 to-purple-800 text-white w-72 flex flex-col relative overflow-hidden">
       {/* Decorative circles */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
       <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2" />

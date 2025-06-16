@@ -15,7 +15,7 @@ const AppLayout: React.FC = () => {
   return (
     <div className="flex min-h-screen bg-gray-50">
       {!hideSidebar && <Sidebar />}
-      <main className="flex-1 overflow-y-auto">
+      <main className={`main-content flex-1 overflow-y-auto${!hideSidebar ? ' with-sidebar' : ''}`}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
