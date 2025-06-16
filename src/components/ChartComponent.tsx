@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './ChartComponent.scss';
 
 interface DataPoint {
   time: string;
@@ -28,26 +29,26 @@ const ChartComponent: React.FC<ChartComponentProps> = ({ title, data, color, uni
   };
 
   return (
-    <div className="bg-white rounded-xl p-6 shadow-sm">
-      <h3 className="text-lg font-medium mb-4">{title}</h3>
+    <div className="chart">
+      <h3 className="chart__title">{title}</h3>
       
-      <div className="relative h-[200px] w-full">
+      <div className="chart__container">
         {/* Y-axis labels */}
-        <div className="absolute left-0 top-0 h-full flex flex-col justify-between text-xs text-gray-500">
+        <div className="chart__y-axis">
           <span>{Math.round(maxValue * 10) / 10}{unit}</span>
           <span>{Math.round(((maxValue + minValue) / 2) * 10) / 10}{unit}</span>
           <span>{Math.round(minValue * 10) / 10}{unit}</span>
         </div>
         
         {/* Chart area */}
-        <div className="absolute left-8 right-0 h-full border-l border-b border-gray-200">
+        <div className="chart__area">
           {/* Horizontal grid lines */}
-          <div className="absolute w-full h-0 top-0 border-t border-gray-100"></div>
-          <div className="absolute w-full h-0 top-1/2 border-t border-gray-100"></div>
-          <div className="absolute w-full h-0 bottom-0 border-t border-gray-100"></div>
+          <div className="chart__grid chart__grid--top"></div>
+          <div className="chart__grid chart__grid--middle"></div>
+          <div className="chart__grid chart__grid--bottom"></div>
           
           {/* Line chart */}
-          <svg className="absolute inset-0 w-full h-full overflow-visible">
+          <svg className="chart__line">
             {chartData.length > 1 && (
               <path
                 d={`M ${chartData.map((point, index) => 
@@ -56,7 +57,7 @@ const ChartComponent: React.FC<ChartComponentProps> = ({ title, data, color, uni
                 fill="none"
                 stroke={color}
                 strokeWidth="2"
-                className="transition-all duration-500"
+                className="chart__path"
               />
             )}
             
@@ -70,15 +71,15 @@ const ChartComponent: React.FC<ChartComponentProps> = ({ title, data, color, uni
                 fill="white"
                 stroke={color}
                 strokeWidth="2"
-                className="transition-all duration-500"
+                className="chart__point"
               />
             ))}
           </svg>
           
           {/* X-axis labels */}
-          <div className="absolute bottom-[-20px] w-full flex justify-between text-xs text-gray-500">
+          <div className="chart__x-axis">
             {chartData.filter((_, i) => i % Math.ceil(chartData.length / 5) === 0 || i === chartData.length - 1).map((point, index) => (
-              <span key={index} className="transform -translate-x-1/2">{point.time}</span>
+              <span key={index}>{point.time}</span>
             ))}
           </div>
         </div>
